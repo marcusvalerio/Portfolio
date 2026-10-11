@@ -1,17 +1,25 @@
 # Marcus Valério · Portfólio
 
 Site estático em português e inglês. Sem framework e sem etapa de build: o Vercel publica a pasta como está.
+No ar em https://marcusvalerio.vercel.app
+
+## Sistema visual
+
+* **Cores:** azul #0117FF, off white #F5F4F0, grafite #202124
+* **Tipografia:** Geist para interface e texto, DM Sans para o nome
+* **Espaçamento:** grade de 8px; seções com 80 a 144px de respiro
+* **Botões pill:** Primary (fundo azul), Outline (borda de 2px azul) e Inverse (fundo grafite)
 
 ## Estrutura
 
 ```
 index.html      página única; textos em pares <span data-l="pt"> / <span data-l="en">
-styles.css      identidade: Azul forte #0117FF, Off white #F5F4F0, Grafite #202124
-main.js         troca de idioma, revelações, cursor quadrado, filmes e contato
+styles.css      tokens, escala tipográfica, botões e layout
+main.js         troca de idioma, revelações, filmes e contato
 films/          filmes dos projetos (mp4 e webm) com pôsteres
 work/           telas estáticas
 motion/         animação do rodapé
-fonts/          Anton, Instrument Sans, Instrument Serif e Space Mono (SIL OFL 1.1)
+fonts/          Geist e DM Sans (SIL OFL 1.1)
 ```
 
 ## Editar um texto
@@ -21,8 +29,3 @@ Cada frase aparece duas vezes, uma por idioma. Edite as duas:
 ```html
 <span data-l="pt">Ver projetos</span><span data-l="en">See the work</span>
 ```
-
-## Publicar
-
-No Vercel: Add New Project, importe este repositório e mantenha as configurações padrão
-(Framework Preset: Other, sem comando de build). No ar em https://marcusvalerio.vercel.app

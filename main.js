@@ -1,5 +1,5 @@
 /* Marcus Valério · portfolio
-   Language switch, reveals, the square cursor, films and contact. No dependencies. */
+   Language switch, reveals, films and contact. No dependencies. */
 (function () {
   'use strict';
   var root = document.documentElement;
@@ -34,9 +34,6 @@
       el.setAttribute('aria-label', el.getAttribute('data-a-' + l));
     });
     // restart the hero of the chosen language so its story begins from the signature
-    document.querySelectorAll('.hero-art[data-l="' + l + '"] svg').forEach(function (svg) {
-      if (svg.setCurrentTime) svg.setCurrentTime(reduced ? 4.5 : 0);
-    });
     if (save) { try { localStorage.setItem('mv-lang', l); } catch (e) {} }
   }
   document.querySelectorAll('[data-set-lang]').forEach(function (b) {
@@ -46,8 +43,7 @@
 
   /* ── reduced motion: hold every SVG on a composed frame ───────── */
   if (reduced) {
-    document.querySelectorAll('.hero-art svg').forEach(function (s) { s.pauseAnimations(); s.setCurrentTime(4.5); });
-    document.querySelectorAll('.stamp svg, .panel svg').forEach(function (s) { s.pauseAnimations(); s.setCurrentTime(3); });
+    document.querySelectorAll('.frame-art svg').forEach(function (s) { s.pauseAnimations(); s.setCurrentTime(3); });
   }
 
   /* ── bar ──────────────────────────────────────────────────────── */
@@ -82,15 +78,6 @@
     revealables.forEach(function (el) { io.observe(el); });
   }
 
-  /* ── areas: the square points at the field you are reading ────── */
-  var areas = document.querySelector('.areas');
-  if (areas) {
-    areas.querySelectorAll('.area').forEach(function (a) {
-      a.addEventListener('mouseenter', function () { areas.setAttribute('data-hover', a.getAttribute('data-i')); });
-    });
-    areas.addEventListener('mouseleave', function () { areas.removeAttribute('data-hover'); });
-  }
-
   /* ── films: play when seen, pause when not, always pausable ───── */
   document.querySelectorAll('.film').forEach(function (v) {
     var btn = v.parentNode.querySelector('.film-toggle');
@@ -102,7 +89,6 @@
       if (v.paused) { userPaused = false; play(); } else { userPaused = true; v.pause(); }
     });
     sync();
-    if (btn) btn.setAttribute('aria-pressed', 'true');
     if ('IntersectionObserver' in window) {
       new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
@@ -131,24 +117,4 @@
     document.body.removeChild(t);
   }
 
-  /* ── the square follows the cursor ────────────────────────────── */
-  var cur = document.querySelector('.cursor');
-  if (cur && !reduced && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-    var x = -100, y = -100, cx = -100, cy = -100, r = 0, raf = null;
-    function loop() {
-      cx += (x - cx) * 0.2; cy += (y - cy) * 0.2;
-      r += ((x - cx) * 0.6 - r) * 0.1;
-      cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px) rotate(' + r + 'deg)';
-      raf = (Math.abs(x - cx) + Math.abs(y - cy) > 0.1) ? requestAnimationFrame(loop) : null;
-    }
-    window.addEventListener('mousemove', function (e) {
-      x = e.clientX; y = e.clientY; cur.classList.add('on');
-      if (!raf) raf = requestAnimationFrame(loop);
-    }, { passive: true });
-    document.addEventListener('mouseleave', function () { cur.classList.remove('on'); });
-    document.querySelectorAll('a, button, .area').forEach(function (el) {
-      el.addEventListener('mouseenter', function () { cur.classList.add('big'); });
-      el.addEventListener('mouseleave', function () { cur.classList.remove('big'); });
-    });
-  }
 })();
