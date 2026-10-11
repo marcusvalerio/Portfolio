@@ -25,5 +25,4 @@ Cada frase aparece duas vezes, uma por idioma. Edite as duas:
 ## Publicar
 
 No Vercel: Add New Project, importe este repositório e mantenha as configurações padrão
-(Framework Preset: Other, sem comando de build). Depois do primeiro deploy, troque
-`/og.png` no `<head>` pelo endereço completo do site para a prévia aparecer nas redes.
+(Framework Preset: Other, sem comando de build). No ar em https://marcusvalerio.vercel.app
