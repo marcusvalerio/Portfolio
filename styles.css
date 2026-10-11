@@ -1,24 +1,21 @@
 /* Marcus Valério · portfolio
-   Palette: Fluid Blue #C5D6EB · Off white #F5F4F0 · Charcoal #202124 */
+   Palette: Ultramarine #0117FF · Cream #F6F5F0 · Navy #08273C
+   Type: Libre Caslon Display for display, DM Sans for text, labels and the monogram */
 
-@font-face { font-family: "Anton"; src: url("fonts/anton-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
-@font-face { font-family: "Instrument Sans"; src: url("fonts/instrument-sans-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument-serif-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Instrument Serif"; src: url("fonts/instrument-serif-latin-400-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
-@font-face { font-family: "Space Mono"; src: url("fonts/space-mono-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Space Mono"; src: url("fonts/space-mono-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Libre Caslon Display"; src: url("fonts/libre-caslon-display-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/dm-sans-latin-300-normal.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/dm-sans-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("fonts/dm-sans-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-display: swap; }
 
 :root {
-  --blue: #C5D6EB;
-  --off: #F5F4F0;
-  --char: #202124;
+  --blue: #0117FF;     /* ultramarine */
+  --off: #F6F5F0;      /* cream */
+  --char: #08273C;     /* navy */
   --g: clamp(16px, 4.4vw, 64px);
-  --display: "Anton", "Impact", "Arial Narrow", sans-serif;
-  --sans: "Instrument Sans", system-ui, sans-serif;
-  --serif: "Instrument Serif", Georgia, serif;
-  --mono: "Space Mono", ui-monospace, monospace;
+  --display: "Libre Caslon Display", "Didot", "Bodoni 72", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --serif: "Libre Caslon Display", Georgia, serif;
+  --mono: "DM Sans", system-ui, sans-serif;
   --ease: cubic-bezier(.16, .84, .3, 1);
   --snap: cubic-bezier(.7, 0, .2, 1);
 }
@@ -269,6 +266,55 @@ html[data-lang="pt"] [data-l="en"], html[data-lang="en"] [data-l="pt"] { display
   .media-cortex .phone { width: 34%; }
   .btn { padding: 14px 16px; }
 }
+
+/* ── classic identity ────────────────────────────────────────────── */
+::selection { background: var(--blue); color: var(--off); }
+.skip { color: var(--off); font-weight: 500; letter-spacing: .1em; }
+.blue { color: inherit; }
+.mark { display: inline-flex; align-items: center; gap: 14px; font: 500 11.5px/1 var(--mono); letter-spacing: .26em; text-transform: uppercase; text-decoration: none; }
+.mark svg { width: 40px; height: 40px; }
+.nav a, .sh, .kicker, .num, .proj-n, .proj-stack, .cap, .flow-st, .foot-row, .chrome span { font-family: var(--mono); font-weight: 500; letter-spacing: .2em; }
+.cap { letter-spacing: .12em; text-transform: uppercase; font-size: 11px; }
+.lang button { font-weight: 500; letter-spacing: .16em; }
+.lang button[aria-pressed="true"] { color: var(--off); }
+.btn { font-weight: 500; letter-spacing: .2em; font-size: 12px; }
+.btn-blue { color: var(--off); }
+.btn-blue:hover { color: var(--char); }
+.btn-line:hover, .btn-dark:hover { color: var(--off); }
+
+.hero { background: var(--off); color: var(--char); }
+.hero .btn-line { color: var(--char); }
+.hero-foot { justify-content: flex-end; }
+
+.ticker { color: var(--off); padding: 20px 0 16px; }
+.ticker-track span { font: 400 clamp(24px, 3vw, 42px)/1 var(--display); letter-spacing: .08em; }
+.ticker .sq { background: var(--off); width: .22em; height: .22em; margin: 0 .6em; vertical-align: .22em; }
+
+.statement { font: 300 clamp(26px, 3.4vw, 50px)/1.18 var(--sans); letter-spacing: -.02em; }
+.now p { font-style: normal; }
+.area .num { color: var(--off); }
+.area h3 { font-size: clamp(32px, 3.6vw, 54px); line-height: 1.02; letter-spacing: .03em; }
+.area p { font-weight: 300; }
+.mega { font-size: clamp(50px, 8.2vw, 134px); line-height: .98; letter-spacing: .02em; }
+.mega .dot { width: .1em; height: .1em; }
+.proj-name { font-size: clamp(34px, 4.1vw, 60px); line-height: 1; letter-spacing: .02em; }
+.proj-name .sq { width: .12em; height: .12em; }
+.proj-cat { font-style: normal; letter-spacing: .01em; }
+.proj-desc { font-weight: 300; }
+.sec.blue { color: var(--off); }
+.principles h3 { font-size: clamp(36px, 4.8vw, 76px); line-height: 1; letter-spacing: .02em; }
+.principles p { font-weight: 300; }
+.hop { outline-color: var(--off); }
+@keyframes hop { 0% { background: var(--off); transform: scale(1.25); } 4% { transform: none; } 33.3%, 100% { background: transparent; } }
+.tools { font-size: clamp(30px, 4.2vw, 64px); letter-spacing: .04em; line-height: 1.2; }
+.contact-h { font-size: clamp(44px, 7.4vw, 120px); line-height: 1; letter-spacing: .02em; }
+.contact-h .outline { color: var(--off); -webkit-text-stroke: 0; font: 500 clamp(12px, 1.1vw, 15px)/1 var(--mono); letter-spacing: .3em; margin-bottom: clamp(20px, 3vw, 36px); }
+.contact-h .dot { width: .1em; height: .1em; }
+.mail-addr { font-weight: 300; }
+.film-toggle .sq-ico { background: var(--off); }
+.foot-badge svg { width: min(250px, 58vw); margin: 0 auto; }
+.foot-msg { font-size: clamp(28px, 4.2vw, 60px); letter-spacing: .06em; margin: clamp(24px, 3vw, 40px) 0 clamp(36px, 5vw, 64px); }
+@media (max-width: 560px) { .mark-name { display: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

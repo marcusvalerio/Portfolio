@@ -6,12 +6,11 @@ Site estático em português e inglês. Sem framework e sem etapa de build: o Ve
 
 ```
 index.html      página única; textos em pares <span data-l="pt"> / <span data-l="en">
-styles.css      identidade: Fluid Blue #C5D6EB, Off white #F5F4F0, Charcoal #202124
+styles.css      identidade: Ultramar #0117FF, Creme #F6F5F0, Marinho #08273C
 main.js         troca de idioma, revelações, cursor quadrado, filmes e contato
 films/          filmes dos projetos (mp4 e webm) com pôsteres
 work/           telas estáticas
-motion/         animação do rodapé
-fonts/          Anton, Instrument Sans, Instrument Serif e Space Mono (SIL OFL 1.1)
+fonts/          Libre Caslon Display e DM Sans (SIL OFL 1.1)
 ```
 
 ## Editar um texto
