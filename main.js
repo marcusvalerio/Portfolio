@@ -34,6 +34,10 @@
       el.setAttribute('aria-label', el.getAttribute('data-a-' + l));
     });
     // restart the hero of the chosen language so its story begins from the signature
+    // restart the hero of the chosen language so the square starts from the name
+    document.querySelectorAll('.hero-art[data-l="' + l + '"] svg').forEach(function (svg) {
+      if (svg.setCurrentTime) svg.setCurrentTime(reduced ? 4.5 : 0);
+    });
     if (save) { try { localStorage.setItem('mv-lang', l); } catch (e) {} }
   }
   document.querySelectorAll('[data-set-lang]').forEach(function (b) {
@@ -43,6 +47,7 @@
 
   /* ── reduced motion: hold every SVG on a composed frame ───────── */
   if (reduced) {
+    document.querySelectorAll('.hero-art svg').forEach(function (s) { s.pauseAnimations(); s.setCurrentTime(4.5); });
     document.querySelectorAll('.frame-art svg').forEach(function (s) { s.pauseAnimations(); s.setCurrentTime(3); });
   }
 

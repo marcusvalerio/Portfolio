@@ -85,28 +85,18 @@ html[data-lang="pt"] [data-l="en"], html[data-lang="en"] [data-l="pt"] { display
 .seg button[aria-pressed="true"] { background: var(--ink); color: var(--off); }
 
 /* ── hero ────────────────────────────────────────────────────────── */
-.hero { padding: clamp(56px, 9vw, 128px) 0 var(--section); }
+.hero { padding: clamp(32px, 5vw, 72px) 0 var(--section); }
 .hero .wrap { display: grid; gap: var(--s3); }
 .name { font: 500 clamp(18px, 1.6vw, 22px)/1 var(--name); letter-spacing: -.01em; }
-.hero .display { margin-top: var(--s1); }
 .hero .lead { margin-top: var(--s1); }
 .hero .actions { margin-top: var(--s2); }
 .facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--s3); margin-top: var(--s6); padding-top: var(--s3); border-top: 1px solid var(--line); }
 .facts dt { font-size: 13px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2); }
 .facts dd { margin-top: 6px; font-size: 16px; font-weight: 500; }
 
-/* the question mark keeps its hook; its dot is the blue square */
-.q { position: relative; display: inline-block; }
-.q-glyph { display: inline-block; clip-path: inset(0 0 .307em 0); }   /* Geist 600: dot 0 to .14em, hook from .217em; baseline sits .132em above the box */
-.q-dot { position: absolute; left: .212em; bottom: .132em; width: .146em; height: .146em; background: var(--blue); }
-.js .q-dot { animation: drop 1.1s var(--ease) .7s both; }
-@keyframes drop {
-  0% { transform: translateY(-1.6em) rotate(-90deg); opacity: 0; }
-  45% { transform: translateY(0) rotate(0); opacity: 1; }
-  60% { transform: translateY(-.18em) scale(1.1, .9); }
-  75% { transform: translateY(0) scale(1.15, .85); }
-  100% { transform: none; opacity: 1; }
-}
+/* the kinetic hero: the square leaves the name and becomes the dot of the question mark */
+.hero-art svg { width: 100%; height: auto; }
+.hero .lead { margin-top: var(--s3); }
 
 /* ── sections ────────────────────────────────────────────────────── */
 .sec { padding: var(--section) 0; }
