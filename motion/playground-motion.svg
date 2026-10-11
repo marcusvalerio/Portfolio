@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="150" viewBox="0 0 1200 150" role="img" aria-labelledby="title desc">
+  <title id="title">A small playground for ideas</title>
+  <desc id="desc">A playful animated dot bounces between the words think, make, and repeat in a restrained editorial style.</desc>
+  <rect width="1200" height="150" fill="#F5F4F0"/>
+  <g stroke="#202124" stroke-opacity=".16" fill="none"><path d="M24 22H1176M24 128H1176"/><path d="M24 22v8M1176 22v8M24 120v8M1176 120v8"/></g>
+  <g font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="39" letter-spacing="-1.5" fill="#202124">
+    <text x="72" y="82">think.</text><text x="405" y="82">make.</text><text x="760" y="82">oops.</text><text x="1010" y="82">repeat.</text>
+  </g>
+  <g fill="#C5D6EB"><rect x="330" y="49" width="26" height="26" transform="rotate(12 343 62)"/><circle cx="708" cy="65" r="6"/><path d="M950 48l14 14-14 14-14-14z"/></g>
+  <circle cx="72" cy="106" r="5" fill="#C5D6EB">
+    <animate attributeName="cx" values="72;343;418;708;790;950;1060;72" dur="7s" repeatCount="indefinite" keyTimes="0;.16;.25;.42;.52;.68;.82;1"/>
+    <animate attributeName="cy" values="106;106;106;106;106;106;106;106" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="r" values="5;9;5;9;5;9;5;5" dur="7s" repeatCount="indefinite"/>
+  </circle>
+  <text x="72" y="108" fill="#202124" fill-opacity=".52" font-family="monospace" font-size="10" letter-spacing="2">A VERY SERIOUS PROCESS (NOT REALLY)</text>
+</svg>
